@@ -3,7 +3,7 @@ import { Text } from "@chakra-ui/react";
 export function Logo(){
     return (
         <Text
-              fontSize="3xl"
+              fontSize={["2xl", "3xl"]}
               fontWidth="bold"
               letterSpacing="tight"
               w="64">
