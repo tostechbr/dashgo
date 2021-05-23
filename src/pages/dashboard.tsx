@@ -3,8 +3,9 @@ import dynamic from 'next/dynamic'
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
 
+
 const Chart = dynamic(() => import('react-apexcharts'), {
-    ssr: false, // so vai ser carregado pelo lado do browser
+    ssr: false, 
 })
 
 const options = {
@@ -15,7 +16,8 @@ const options = {
         zoom: {
             enabled: false,
         },
-        foreColor: theme.colors.gray[500],
+        
+        foreColor:  theme.colors.gray[500],
     },
     grid: {
         show: false,
@@ -27,33 +29,26 @@ const options = {
         enabled: false,
     },
     xaxis: {
-        type: 'datetime',
-        axisBorder: {
-            color: theme.colors.gray[600]
-        },
-        axisTicks: {
-            color: theme.colors.gray[600]
-        },
-        categories: [
-            '2021-03-18T00:00:00.000Z',
-            '2021-03-19T00:00:00.000Z',
-            '2021-03-20T00:00:00.000Z',
-            '2021-03-21T00:00:00.000Z',
-            '2021-03-23T00:00:00.000Z',
-            '2021-03-24T00:00:00.000Z',
-            '2021-03-25T00:00:00.000Z',
-        ]
+        categories: [],
+        
+    },
+    axisBorder: {
+        color: theme.colors.gray[600]
+    },
+    axisTicks: {
+        color: theme.colors.gray[600]
     },
     fill: {
-        opacity:0.3,
-        type: 'gradient',
-        gradient: {
-            shade: 'dark',
-            opacityFrom: 0.7,
-            opacityTo: 0.3,
-        }
+    opacity:0.3,
+    type: 'gradient',
+    gradient: {
+        shade: 'dark',
+        opacityFrom: 0.7,
+        opacityTo: 0.3,
     }
-}
+    }
+    
+};
 
 const series = [
     { name: 'series1', data: [1, 120, 222, 10, 20, 211, 124]}
@@ -78,7 +73,7 @@ export default function Dashboard(){
                         pb="4"
                     >
                         <Text fontSize="lg" mb="4">Inscritos da Semana</Text>
-                        <Chart options={options} series={series} type="area" height={160}/>
+                        <Chart options={options} series={series} type="area" heigth={160} />
                     </Box>
                     <Box 
                         p={["6", "8"]}
@@ -87,7 +82,7 @@ export default function Dashboard(){
                         pb="4"
                     >
                         <Text fontSize="lg" mb="4">Taxa de abertura</Text>
-                        <Chart options={options} series={twoseries} type="area" height={160}/>
+                        <Chart  options={options} series={twoseries} type="area" heigth={160}/>
                     </Box>
                 </SimpleGrid>
             </Flex>
