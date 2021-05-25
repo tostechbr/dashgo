@@ -1,6 +1,5 @@
 import { Link, Icon, Text, LinkProps as ChakraLinkProps } from "@chakra-ui/react";
 import { ElementType } from 'react';
-import { RiDashboard2Line } from "react-icons/ri";
 
 interface NavLinkProps extends ChakraLinkProps {
     icon: ElementType;
