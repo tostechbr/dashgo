@@ -106,7 +106,7 @@ export default function UserList() {
 
               <Pagination 
                 totalCountOfRegisters={200}
-                currentPage={59}
+                currentPage={5}
                 onPageChange={() => {}}
               />
             </>
